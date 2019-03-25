@@ -26,11 +26,8 @@ find_package(PythonInterp REQUIRED)
 find_package(PythonLibs "${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}" REQUIRED)
 
 find_package(Boost REQUIRED)
-if(Boost_VERSION LESS 106700)
-  set(BOOST_PYTHON_COMPONENT python)
-elseif()
-  set(BOOST_PYTHON_COMPONENT python${PYTHON_VERSION_MAJOR}${PYTHON_VERSION_MINOR})
-endif()
+set(BOOST_PYTHON_COMPONENT python${PYTHON_VERSION_MAJOR}${PYTHON_VERSION_MINOR})
+
 
 find_package(Boost REQUIRED COMPONENTS
   date_time
